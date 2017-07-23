@@ -30,3 +30,8 @@ export function fetchData() {
       .catch((err) => console.log('err:', err))
   }
 }
+
+
+export function submitAnswer(){
+  
+}

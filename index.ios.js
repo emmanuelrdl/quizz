@@ -19,7 +19,7 @@ const store = configureStore()
 
 const ReduxApp = () => (
   <Provider store={store}>
-    <App />
+    <App store={store} />
   </Provider>
 )
 

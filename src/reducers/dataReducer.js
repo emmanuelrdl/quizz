@@ -1,6 +1,7 @@
 import { FETCHING_DATA, FETCHING_DATA_SUCCESS, FETCHING_DATA_FAILURE } from '../constants'
 const initialState = {
   data: [],
+  score: 0,
   dataFetched: false,
   isFetching: false,
   error: false
