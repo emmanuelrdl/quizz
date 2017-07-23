@@ -1,13 +1,12 @@
-const people = [
-  { name: 'Nader', age: 36 },
-  { name: 'Amanda', age: 24 },
-  { name: 'Jason', age: 44 }
-]
+
+import FileSystem from 'react-native-filesystem';
+import questions from './quizz_questions.json'
+
 
 export default () => {
+  // console.log(questions)
   return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      return resolve(people)
-    }, 3000)
+    console.log('coucou')
+    return resolve(questions)
   })
 }

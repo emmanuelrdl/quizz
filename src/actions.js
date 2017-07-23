@@ -1,5 +1,5 @@
 import { FETCHING_DATA, FETCHING_DATA_SUCCESS, FETCHING_DATA_FAILURE, FETCH_QUESTIONS } from './constants'
-import getPeople from './api'
+// import getPeople from './api'
 import getQuestion from './api'
 
 export function getData() {
@@ -22,10 +22,9 @@ export function getDataFailure() {
 }
 
 export function fetchQuestions(){
-  
-  return {
-    type: FETCH_QUESTIONS
-  }
+  getQuestion().then((data) => {
+    console.log(data[1])
+  })
 }
 
 export function fetchData() {
