@@ -7,16 +7,15 @@ import { fetchQuestions } from '../actions'
 class QuestionForm extends Component {
   constructor(props) {
     super(props);
-    console.log(configureStore().getState())
-    console.log(this.store)
+    this.props = props
   }
 
 
-
   render() {
+    console.log(this.props)
     return (
       <View style={styles.container}>
-      <TouchableHighlight style={styles.button} onPress={() => props.fetchQuestions()}>
+      <TouchableHighlight style={styles.button} onPress={() => fetchQuestions()}>
         <Text style={styles.buttonText}>GO</Text>
       </TouchableHighlight>
       <Text style={styles.text}>Hello world!</Text>
@@ -34,7 +33,8 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    fetchData: () => dispatch(fetchData())
+    // fetchData: () => dispatch(fetchData())
+    fetchQuestion: () => dispatch(fetchQuestion())
   }
 }
 
