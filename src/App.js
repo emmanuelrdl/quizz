@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { TouchableHighlight, View, Text, StyleSheet } from 'react-native'
-
+import QuestionForm  from './components/questionForm.js'
 import { connect } from 'react-redux'
 import { fetchData } from './actions'
 
@@ -19,25 +19,8 @@ const App = (props) => {
 
   return (
     <View style={container}>
-      <Text style={text}>Redux Examples</Text>
-      <TouchableHighlight style={button} onPress={() => props.fetchData()}>
-        <Text style={buttonText}>Load Data</Text>
-      </TouchableHighlight>
-      <View style={mainContent}>
-      {
-        props.appData.isFetching && <Text>Loading</Text>
-      }
-      {
-        props.appData.data.length ? (
-          props.appData.data.map((person, i) => {
-            return <View key={i} >
-              <Text>Name: {person.name}</Text>
-              <Text>Age: {person.age}</Text>
-            </View>
-          })
-        ) : null
-      }
-      </View>
+      <Text style={text}>Redux Quizz Exemple</Text>
+      <QuestionForm/>
     </View>
   )
 }
