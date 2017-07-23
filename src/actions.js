@@ -1,4 +1,4 @@
-import { FETCHING_DATA, FETCHING_DATA_SUCCESS, FETCHING_DATA_FAILURE } from './constants'
+import { FETCHING_DATA, FETCHING_DATA_SUCCESS, FETCHING_DATA_FAILURE, FETCH_QUESTIONS } from './constants'
 import getPeople from './api'
 
 export function getData() {
@@ -20,6 +20,12 @@ export function getDataFailure() {
   }
 }
 
+export function fetchQuestions(){
+  return {
+    type: FETCH_QUESTIONS
+  }
+}
+
 export function fetchData() {
   return (dispatch) => {
     dispatch(getData())
@@ -33,5 +39,5 @@ export function fetchData() {
 
 
 export function submitAnswer(){
-  
+
 }

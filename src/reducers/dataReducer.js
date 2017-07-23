@@ -1,7 +1,9 @@
-import { FETCHING_DATA, FETCHING_DATA_SUCCESS, FETCHING_DATA_FAILURE } from '../constants'
+import { FETCHING_DATA, FETCHING_DATA_SUCCESS, FETCHING_DATA_FAILURE, FETCH_QUESTIONS } from '../constants'
 const initialState = {
   data: [],
   score: 0,
+  questionsDone: 0,
+  question: '',
   dataFetched: false,
   isFetching: false,
   error: false
@@ -9,6 +11,13 @@ const initialState = {
 
 export default function dataReducer (state = initialState, action) {
   switch (action.type) {
+    case FETCHING_DATA:
+      return {
+        ...state,
+        score: 0,
+        questionsDone: 0,
+        question: action.data
+      }
     case FETCHING_DATA:
       return {
         ...state,
