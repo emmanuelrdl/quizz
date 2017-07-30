@@ -5,6 +5,9 @@ import { TouchableHighlight, View, Text, StyleSheet } from 'react-native'
 import QuestionForm  from './components/questionForm.js'
 import { connect } from 'react-redux'
 import { fetchData } from './actions'
+import configureStore from './configureStore'
+
+const store = configureStore()
 
 let styles
 
@@ -20,7 +23,7 @@ const App = (props) => {
   return (
     <View style={container}>
       <Text style={text}>Redux Quizz Exemple</Text>
-      <QuestionForm/>
+      <QuestionForm store={store}/>
     </View>
   )
 }

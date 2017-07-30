@@ -1,6 +1,9 @@
 import { FETCHING_DATA, FETCHING_DATA_SUCCESS, FETCHING_DATA_FAILURE, FETCH_QUESTIONS } from './constants'
 // import getPeople from './api'
+import { connect } from 'react-redux'
 import getQuestion from './api'
+import configureStore from './configureStore'
+
 
 export function getData() {
   return {
@@ -21,9 +24,10 @@ export function getDataFailure() {
   }
 }
 
-export function fetchQuestions(){
+export function fetchQuestions(dispatch){
+  let store = configureStore()
   getQuestion().then((data) => {
-    console.log(data[1])
+    store.dispatch(getDataSuccess(data[1]))
   })
 }
 

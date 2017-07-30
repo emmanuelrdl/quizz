@@ -10,6 +10,9 @@ class QuestionForm extends Component {
     this.props = props
   }
 
+      // componentWillReceiveProps(nextProps) {
+      //   console.log('toto')
+      // }
 
   render() {
     console.log(this.props)
@@ -26,6 +29,7 @@ class QuestionForm extends Component {
 }
 
 function mapStateToProps (state) {
+  console.log(state)
   return {
     appData: state.appData
   }
